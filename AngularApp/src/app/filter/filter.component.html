@@ -1,0 +1,31 @@
+<div class="col-md-12">
+  <div class="row">
+    <ul class="list-inline" *ngFor="let letter of letters">
+      <li class="list-inline-item p-2" role="button" (click)="addCitiInitials(letter)">{{letter}}</li>
+    </ul>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="row">
+    <ul class="list-inline" *ngFor="let city of citys">
+      <li class="list-inline-item p-2" (click)="addCity(city)">{{city}}</li>
+    </ul>
+  </div>
+</div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          count : - {{locations.length}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of locations | locationInitialPipe: cities_initials | locationPipe : cities | functionAreaPipe : function_area_ids as result; let i=index; let count = count;" ([ngModel])="count">
+        <th scope="row">{{i+1}}</th>
+        <td>{{job.JobTitle}}</td>
+        <td>{{job.Location.Area+','+job.Location.CityName+','+job.Location.Country}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>

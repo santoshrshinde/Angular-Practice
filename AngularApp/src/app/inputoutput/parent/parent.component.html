@@ -1,0 +1,19 @@
+
+<div class="card">
+    <div class="card-header">Parent Component</div>
+    <div class="card-body">
+        Message Recieved from child :- {{recievedMassage?.message}}
+    </div> 
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <input type="text" [(ngModel)]="data" class="form-control input-sm">
+            </div>
+            <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <button (click)="send(data);" class="btn btn-success">Send Parent Message</button>
+            </div>
+         </div>
+         <br>
+        <app-child (message)="recieveMessage($event);" [parentMessage]="message" ></app-child>
+    </div>
+  </div>

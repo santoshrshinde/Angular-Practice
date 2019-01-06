@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">Child Component</div>
+  <div class="card-body">
+   <div class="row">
+      <div class="col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+          <input type="text" [(ngModel)]="name" class="form-control input-sm">
+      </div>
+      <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <button (click)="sendMessage(name);" class="btn btn-success">Send Message</button>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          Message recieved from parent :- {{parentMessage}}
+      </div>
+   </div>
+  </div>
+</div>
